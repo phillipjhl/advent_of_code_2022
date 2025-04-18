@@ -15,16 +15,30 @@ def main():
             calculate_bp_quality(line)
 
 def calculate_bp_quality(line: str):
+    QUALITY = 0
+    ORE_AMT = 0
+    CLAY_AMT = 0
+    OBSIDIAN_AMT = 0
+    GEODE_AMT = 0
+    ORE_ROBOTS = 0
+    CLAY_ROBOTS = 0
+    OBSIDIAN_ROBOTS = 0
+    GEODE_ROBOTS = 0
+
     line = line.strip()
     blueprint_tuple = line.split(":")
     
     print('{0}:'.format(blueprint_tuple[0]))
+    print("---------------------------------------------\n")
     blueprint_rules = blueprint_tuple[1].split(".")
     blueprint_rules.pop()
 
     build_instructions = create_build_instructions(blueprint_rules)
 
-    print('BUILD INSTRUCTIONS: {0}'.format(build_instructions))
+    print('BUILD INSTRUCTIONS: {0}\n'.format(build_instructions))
+
+    # for i in range(len(24)):
+
 
     # TO DO: calculate the max number of geodes a blueprint can build over 24 minutes. 
     # Each robot can collect 1 of its resource type per minute. 
